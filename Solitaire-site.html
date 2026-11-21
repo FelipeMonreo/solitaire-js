@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solitaire Custom</title>
+  <link rel="stylesheet" href="Assets/style.css">
+</head>
+<body>
+  <div id="win-message" class="hidden">
+    <div class="win-box">
+      <h2>Ai câștigat! 🎉</h2>
+      <p>Felicitări, ai terminat jocul.</p>
+      <button id="win-new-game-btn">Joc nou</button>
+    </div>
+  </div>
+  <header>
+    <h1>Solitaire Custom</h1>
+    <p>O variantă personalizată de solitaire</p>
+  </header>
+
+  <main>
+    <section id="top-area">
+      <div id="deck-area">
+        <h2>Pachet</h2>
+        <div class="card-slot" id="stock"></div>
+      </div>
+
+      <div id="waste-area">
+        <h2>Waste</h2>
+        <div class="card-slot" id="waste"></div>
+      </div>
+
+      <div id="foundation-area">
+        <h2>Foundation</h2>
+        <div class="foundation-row">
+          <div class="card-slot foundation" id="foundation-1"></div>
+          <div class="card-slot foundation" id="foundation-2"></div>
+          <div class="card-slot foundation" id="foundation-3"></div>
+          <div class="card-slot foundation" id="foundation-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tableau-area">
+      <h2>Tableau</h2>
+      <div class="tableau-row">
+        <div class="tableau-column" id="column-1"></div>
+        <div class="tableau-column" id="column-2"></div>
+        <div class="tableau-column" id="column-3"></div>
+        <div class="tableau-column" id="column-4"></div>
+        <div class="tableau-column" id="column-5"></div>
+        <div class="tableau-column" id="column-6"></div>
+        <div class="tableau-column" id="column-7"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <button id="new-game-btn">Joc nou</button>
+    <button id="restart-btn">Restart</button>
+  </footer>
+  <script src="Assets/script.js"></script>
+</body>
+</html>

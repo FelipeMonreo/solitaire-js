@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0b6623;
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+}
+
+#top-area {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.foundation-row {
+    display: flex;
+    gap: 10px;
+}
+
+.tableau-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.tableau-column {
+    width: 100px;
+    min-height: 520px;
+    border: 2px dashed rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding-top: 10px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.card-slot {
+    width: 90px;
+    height: 130px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.06);
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.card-slot.drop-highlight {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.playing-card {
+    width: 90px;
+    height: 130px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    border: 2px solid #111;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: -95px;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    font-weight: bold;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.tableau-column .playing-card:last-child {
+    margin-bottom: 0;
+}
+
+.playing-card:hover {
+    transform: translateY(-6px);
+}
+
+.playing-card:active {
+    cursor: grabbing;
+}
+
+.playing-card.red {
+    color: #c62828;
+}
+
+.playing-card.face-down {
+    background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+    border: 2px solid white;
+    overflow: hidden;
+}
+
+.playing-card.face-down::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+}
+
+.playing-card.face-down::after {
+    content: "🂠";
+    position: absolute;
+    font-size: 34px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.playing-card.face-down.stock-empty::after {
+    content: none;
+}
+
+.foundation .playing-card:not(:last-child) {
+    display: none;
+}
+
+.card-corner {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.card-corner.top-left {
+    top: 6px;
+    left: 8px;
+}
+
+.card-corner.bottom-right {
+    bottom: 6px;
+    right: 8px;
+    transform: rotate(180deg);
+}
+
+.card-center {
+    font-size: 30px;
+}
+
+.drag-stack {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.drag-stack .playing-card {
+    margin-bottom: -95px;
+}
+
+.drag-stack .playing-card:last-child {
+    margin-bottom: 0;
+}
+
+.tableau-column.drop-highlight {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+#stock{
+    cursor:pointer;
+}
+#win-message {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+#win-message.hidden {
+    display: none;
+}
+
+.win-box {
+    background: white;
+    color: #111;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
